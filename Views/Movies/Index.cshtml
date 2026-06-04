@@ -1,0 +1,61 @@
+@model IEnumerable<MoviesApp.Models.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-controller="Movies" asp-action="Index" method="get">
+    <p>
+        <label>Title: <input type="text" name="SearchString" value="@ViewData["sc"]" /></label>
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var movie in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => movie.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(model => movie.ReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(model => movie.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(model => movie.Price)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@movie.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@movie.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@movie.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
