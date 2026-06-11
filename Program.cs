@@ -9,6 +9,7 @@ string connectionString = builder.Configuration.GetConnectionString("DefaultConn
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddValidation();
 
 var app = builder.Build();
 

@@ -18,6 +18,7 @@ public class SeedMovies
                 ReleaseDate = DateTime.Parse("2003-10-16"),
                 Genre = "Action",
                 Price = 6.99M,
+                Rating = "R",
             },
             new Movie
             {
@@ -25,6 +26,7 @@ public class SeedMovies
                 ReleaseDate = DateTime.Parse("2004-04-16"),
                 Genre = "Action",
                 Price = 6.99M,
+                Rating = "R",
             },
             new Movie
             {
@@ -32,6 +34,7 @@ public class SeedMovies
                 ReleaseDate = DateTime.Parse("2017-07-28"),
                 Genre = "Thriller",
                 Price = 10.49M,
+                Rating = "R",
             },
             new Movie
             {
@@ -39,6 +42,7 @@ public class SeedMovies
                 ReleaseDate = DateTime.Parse("1998-11-20"),
                 Genre = "Thriller",
                 Price = 5.79M,
+                Rating = "R",
             },
             new Movie
             {
@@ -46,7 +50,17 @@ public class SeedMovies
                 ReleaseDate = DateTime.Parse("1995-12-21"),
                 Genre = "Sci-fi",
                 Price = 4.99M,
+                Rating = "R",
+            },
+            new Movie
+            {
+                Title = "Harry Potter and the Sorcerer's Stone",
+                ReleaseDate = DateTime.Parse("2001-11-04"),
+                Genre = "Adventure",
+                Price = 9.99M,
+                Rating = "PG",
             });
+
         context.SaveChanges();
     }
 }
